@@ -1,0 +1,61 @@
+body{
+    background: blue;
+}
+.read-bg{
+    background: red;
+    display: inline-block;
+}
+
+.blue-bg {
+    display: inline-block;
+    padding: 0 100px 20px 0;
+    background: blue;
+    outline: 1px solid white;
+}
+
+.yellow-bg{
+    display: inline-block;
+    padding: 0 100px 20px 0;
+    background: yellow;
+}
+
+.one{
+    background: red;
+    height: 30px;
+    width: 30px;
+}
+
+.two{
+    height: 30px;
+    width: 60px;
+    background: #ffa300;
+}
+
+.three{
+    height: 30px;
+    width: 90px;
+    background: #4600ff;
+}
+
+.subsup{
+    background: #fe733a;
+    font-size: 30px;
+    padding: 20px;
+    display: inline-block;
+}
+
+.takoivid{
+    background: #d6d7be;
+    width: 500px;
+}
+
+.takoivid h1{
+    color: #896267;
+}
+
+.takoivid h2{
+    color: #512411;
+}
+.takoivid h3 {
+    color: #020c15;
+}
