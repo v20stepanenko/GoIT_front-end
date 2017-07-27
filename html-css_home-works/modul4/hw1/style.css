@@ -1,24 +1,30 @@
 .wrapper_item-block {
-  min-width: 400px;
   padding: 12px;
-  display: inline-block; }
+  display: inline-block;
+  width: 375px;; }
 
-.item-block {
+.wrapper_item-block > div{
   display: inline-block;
   border: 2px solid #5a5a5a;
   font-family: "Tahoma", sans-serif;
   width: 100%; }
-  .item-block .item_header {
+  .wrapper_item-block h2 {
     text-align: center;
-    font-size: 22px;
-    margin-top: 18px; }
-  .item-block .item_img {
+    font-size: 21px;
+    padding: 0 7px;
+    margin-top: 10px;
+    margin-left: 3px; }
+  .wrapper_item-block > div .item_img {
     text-align: center;
-    display: inline-block; }
-    .item-block .item_img img {
-      width: 73%; }
-  .item-block .item_btn-installmant {
-    margin-top: 24px;
+    display: inline-block;
+    margin: 5px 0 0 4px; }
+  .wrapper_item-block > div .item_img img {
+      width: 61%;; }
+  .wrapper_item-block button{
+    display: block;
+    border: none;
+  }
+  .wrapper_item-block > div .item_btn-installmant {
     color: white;
     font-size: 22px;
     width: 190px;
@@ -27,19 +33,20 @@
     text-align: center;
     vertical-align: middle;
     box-shadow: -4px 4px 0px 1px #9c9c9c; }
-  .item-block .item_price {
-    margin-top: 22px;
+  .wrapper_item-block span {
+    margin-left: 126px;
     font-size: 31px;
-    text-align: center; }
-  .item-block .item_btn-buy {
-    margin: 22px auto 10px;
-    width: 229px;
-    padding: 12px 0 8px;
+    text-align: center;
+    line-height: 68px; }
+  .wrapper_item-block > div .item_btn-buy {
+    width: 230px;
+    padding: 6px 80px 9px;
     color: white;
     text-align: center;
     background: #ff0000;
     font-size: 28px;
     text-shadow: -2px 2px 0px black;
-    box-shadow: 0 4px 0 0 #850000; }
+    box-shadow: 0 4px 0 0 #850000;
+    margin: 0px 16% 10px 62px; }
 
 /*# sourceMappingURL=style.css.map */
