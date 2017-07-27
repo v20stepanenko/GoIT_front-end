@@ -14,7 +14,7 @@
     padding: 0 7px;
     margin-top: 10px;
     margin-left: 3px; }
-  .wrapper_item-block > div .item_img {
+  .wrapper_item-block .item_img {
     text-align: center;
     display: inline-block;
     margin: 5px 0 0 4px; }
@@ -24,7 +24,7 @@
     display: block;
     border: none;
   }
-  .wrapper_item-block > div .item_btn-installmant {
+  .wrapper_item-block .item_btn-installmant {
     color: white;
     font-size: 22px;
     width: 190px;
@@ -38,7 +38,7 @@
     font-size: 31px;
     text-align: center;
     line-height: 68px; }
-  .wrapper_item-block > div .item_btn-buy {
+  .wrapper_item-block .item_btn-buy {
     width: 230px;
     padding: 6px 80px 9px;
     color: white;
