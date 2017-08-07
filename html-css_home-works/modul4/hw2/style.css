@@ -1,4 +1,5 @@
 .chess-board {
+<<<<<<< HEAD
   padding: 0;
   margin: 50px auto;
   width: 600px;
@@ -15,3 +16,23 @@
     background: #850000; }
 
 /*# sourceMappingURL=style.css.map */
+=======
+	padding: 0;
+	margin: 50px auto;
+	width: 600px;
+	height: 600px;
+}
+.chess-board .cell {
+	width: 33.3333333%;
+	height: 33.3333333%;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+}
+.chess-board .cell img {
+	width: 100%;
+}
+.chess-board .black-cell {
+	background: #850000;
+}
+>>>>>>> origin/master
