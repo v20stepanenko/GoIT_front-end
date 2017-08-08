@@ -1,0 +1,36 @@
+.wrapper{
+    position: relative;
+    width: 560px;
+    height: 447px;
+    margin: 30px auto;
+    background: #80cdc6;
+}
+.wrapper > *{
+    display: block;
+    position: absolute;
+}
+
+.world{
+    bottom: 20px;
+    z-index: 3;
+
+}
+.clouds{
+    transform: scale(0.6, 0.6);
+    top: -41px;
+    left: 110px;
+
+}
+.water{
+	  bottom: 0px;
+    left: 0;
+    z-index: 5;
+}
+.ship{
+    width: 140px;
+    height: 110px;
+    bottom: 38px;
+    left: 0px;
+    z-index: 4;
+
+}
