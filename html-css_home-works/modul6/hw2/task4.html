@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>m6 hw2 t3</title>
+    <style>
+        .popap-windows {
+            background: #f9f9f9;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+            margin-top: 30px;
+            margin-bottom: 30px;
+            border-radius: 7px;
+            box-shadow: 0 -1px 10px 2px rgba(0, 0, 0, 0.75);
+            display: inline-block;
+            padding: 15px;
+        }
+
+        table {
+            border-collapse: collapse;
+            font-family: sans-serif;
+            white-space: nowrap;
+        }
+
+        table button {
+            background: transparent;
+            outline: none;
+            border: none;
+        }
+
+        button:active, button:focus {
+            outline: none;
+        }
+
+        tr > * {
+            border-bottom: 1px solid #e1e1e1;
+            padding: 12px 10px 28px 50px;
+            font-size: 15px;
+        }
+
+        tr td:first-of-type {
+            color: red;
+        }
+
+        th {
+            text-align: left;
+            font-weight: 600;
+            padding-bottom: 15px;
+            font-size: 13px;
+        }
+
+        tr > *:first-of-type {
+            padding-left: 10px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translate(50%, -50%);
+            background: transparent;
+            padding: 0;
+            border-radius: 50%;
+            border: 1px solid #1d1d1d;
+        }
+
+        .close-btn:before {
+            content: '\00D7';
+            color: white;
+            line-height: 1;
+            font-size: 25px;
+            display: block;
+            width: 25px;
+            height: 25px;
+            border: 2px solid white;
+            border-radius: 50%;
+            background: #1d1d1d;
+        }
+
+        .summ .item {
+            margin-top: 25px;
+            display: inline-block;
+            float: right;
+            text-align: right;
+            border-right: 5px solid #efefef;
+            padding-right: 15px;
+            font-family: sans-serif;
+            font-weight: 600;
+        }
+
+        .item span {
+            color: #9f9d9f;
+            font-weight: 100;
+        }
+
+        .summ:after {
+            content: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+
+        .go-basket {
+            margin-top: 25px;
+            margin-bottom: 15px;
+            color: #e84147;
+            background: transparent;
+            border: none;
+            outline: none;
+            font-size: 15px;
+            font-style: italic;
+            position: relative;
+            left: 50%;
+            transform: translate(-50%);
+        }
+
+        td:nth-of-type(5) {
+            vertical-align: middle;
+            padding: 0;
+        }
+
+        table button {
+            vertical-align: middle;
+            background: #e7242a;
+            width: 30px;
+            height: 30px;
+            font-weight: 800;
+            color: white;
+            text-transform: uppercase;
+            font-size: 20px;
+        }
+
+        .delete {
+            background: #dd5249;
+            width: 70px;
+            font-size: 10px;
+
+        }
+        .delete span{
+            font-stretch: ultra-condensed;
+            transform: scale(0.8, 1.2);
+            display: inline-block;
+            letter-spacing: 1px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="popap-windows">
+    <button class="close-btn"></button>
+    <table>
+        <tr>
+            <th>Название</th>
+            <th>Кол-во</th>
+            <th>Цена</th>
+            <th>Скидка</th>
+            <th></th>
+            <th>Итого</th>
+        </tr>
+        <tr>
+            <td>Медведь девочка</td>
+            <td>1шт.</td>
+            <td>300р.</td>
+            <td>50%</td>
+            <td>
+                <button class="plus">+</button>
+                <button class="minus">-</button>
+                <button class="delete"><span>Удалить</span></button>
+            </td>
+            <td>300р.</td>
+        </tr>
+        <tr>
+            <td>Динозавр</td>
+            <td>1шт.</td>
+            <td>100р.</td>
+            <td>&mdash;</td>
+            <td>
+                <button class="plus">+</button>
+                <button class="minus">-</button>
+                <button class="delete"><span>Удалить</span></button>
+            </td>
+            <td>100р.</td>
+        </tr>
+        <tr>
+            <td>Семейный домик</td>
+            <td>1шт.</td>
+            <td>10&thinsp;000р.</td>
+            <td>&mdash;</td>
+            <td>
+                <button class="plus">+</button>
+                <button class="minus">-</button>
+                <button class="delete"><span>Удалить</span></button>
+            </td>
+            <td>10&thinsp;000р.</td>
+        </tr>
+        <tr>
+            <td>Веселый горох</td>
+            <td>1шт.</td>
+            <td>300р.</td>
+            <td>&mdash;</td>
+            <td>
+                <button class="plus">+</button>
+                <button class="minus">-</button>
+                <button class="delete"><span>Удалить</span></button>
+            </td>
+            <td>300р.</td>
+        </tr>
+    </table>
+    <div class="summ">
+        <div class="item">
+            4 шт. на сумму: 10 700р.
+            <br>
+            <span>Сумма без скидки: 11 000р. &mdash;</span>
+        </div>
+    </div>
+    <button class="go-basket">перейти в корзину &rarr;</button>
+</div>
+</body>
+</html>
