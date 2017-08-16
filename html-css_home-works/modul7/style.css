@@ -6,126 +6,52 @@ body {
     line-height: 150%;
     font-weight: normal;
     font-variant: normal;
-    background: #FFF url(images/strip.png) no-repeat fixed 0px 0px;
-    text-align: left;
+    background-attachment: fixed;
+    background-image: url(images/strip.png);
+    background-color: #fff;
+    /*background: #fff url(images/strip.png) fixed; Странно работает, меняет угол */
+}
 
+
+h1 {
+    line-height: 150%;
+}
+
+.red-text{
+    color: red;
+}
+
+.small-img{
+    width: 300px;
+}
+
+.middle-img{
+    width: 600px;
+}
+
+.center-content{
+    text-align: center;
 }
 
 .wrapper {
     width: 960px;
-    background-image: url(images/header-bg.png);
-    background-repeat: repeat-x;
     border-radius: 5px 5px 5px 5px;
     box-shadow: 0 0 10px;
-    background-color: #FFFFFF;
+    background: #fff url(images/header-bg.png) repeat-x;
     margin: 25px auto;
-    border: 1px solid #000000;
-    text-align: left;
+    border: 1px solid #000;
 }
 
 header {
     height: 120px;
-    float: left;
+    display: flex;
+    justify-content: space-between;
     width: 100%;
     margin-bottom: 40px;
-
 }
 
-header h1 {
-    margin: 0;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    height: 100px;
-    padding-top: 10px;
-    padding-right: 0;
-    padding-bottom: 10px;
-    padding-left: 0;
-
-}
-
-#sidebar1 a {
-    color: #000;
-}
-
-#sidebar1 a:hover {
-    text-decoration: underline;
-    font-size: 14px;
-}
-
-#sidebar1 {
-    float: left;
-    width: 200px;
-    padding: 15px 10px 15px 20px;
-}
-
-#sidebar1 ul {
-    margin: 0px;
-    padding-left: 20px;
-    line-height: 150%;
-}
-
-#sidebar1 ul li {
-    margin: 10px 0;
-}
-
-#sidebar1 ul li a {
-    color: #000;
-    font-size: 13px;
-    text-decoration: none;
-}
-
-#sidebar1 ul li a:hover {
-    color: #000;
-    /* font-size:14px; */
-    text-decoration: underline;
-}
-
-main {
-    width: 680px;
-    padding: 0 20px;
-    float: right;
-}
-
-#footer {
-    padding: 0 10px 0 20px;
-    background: #DDDDDD;
-
-    height: 90px;
-}
-
-#footer p {
-    margin: 0;
-    padding: 10px 0;
-}
-
-#footer a {
-    color: black;
-    text-decoration: none;
-}
-
-#footer a :hover {
-    color: black;
-    text-decoration: underline;
-}
-
-.fltrt {
-    float: right;
-    margin-left: 8px;
-}
-
-.fltlft {
-    float: left;
-    margin-right: 8px;
-}
-
-.clearfloat {
-    clear: both;
-    height: 0;
-    font-size: 1px;
-    line-height: 0px;
-}
-
-#wrapper #header img {
+.logo {
+    padding: 10px;
     margin: 10px;
 }
 
@@ -133,35 +59,80 @@ main {
     width: 400px;
     height: 100px;
     margin: 10px;
-    float: right;
     line-height: 21px;
+    font-size: 14px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.contacts div{
+    margin-right: 20px;
+}
+
+.page-body{
+    display: flex;
+    justify-content: space-between;
+}
+
+aside nav{
+    margin-bottom: 40px;
+}
+
+aside a {
+    color: #000;
+}
+
+aside a:hover {
+    text-decoration: underline;
     font-size: 14px;
 }
 
-.center{
-    text-align: center;
+aside {
+    width: 200px;
+    padding: 15px 10px 15px 20px;
 }
 
-.logo {
-    width: 300px;
-    height: 100px;
-    padding: 10px;
-    margin: 10px;
-    float: left;
-}
-
-h1 {
+aside ul {
+    margin: 0;
+    padding-left: 20px;
     line-height: 150%;
 }
 
-.bordered {
+aside li {
+    margin: 10px 0;
+}
+
+aside a {
+    color: #000;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+aside a:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+main {
+    width: 680px;
+    padding: 0 20px;
+}
+
+main h1{
+    font-size: 2em;
+}
+
+main img {
     margin: 15px;
     border-radius: 10px;
     border: 5px solid #00698c;
 }
 
-.clearfix {
-    width: 500px;
-    height: 2px;
-    float: none;
+footer {
+    padding: 10px 0 0 20px;
+    background: #ddd;
+    height: 90px;
+    font-weight: bold;
 }
+
+
