@@ -1,0 +1,23 @@
+{
+  "name": "v20stepanenko.github.io",
+  "version": "1.0.0",
+  "description": "GoIT homework",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/v20stepanenko/v20stepanenko.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/v20stepanenko/v20stepanenko.github.io/issues"
+  },
+  "homepage": "https://github.com/v20stepanenko/v20stepanenko.github.io#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1"
+  }
+}
