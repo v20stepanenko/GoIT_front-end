@@ -17,6 +17,10 @@
             padding: 15px;
         }
 
+        button{
+            cursor: pointer;
+        }
+
         table {
             border-collapse: collapse;
             font-family: sans-serif;
@@ -103,17 +107,18 @@
         }
 
         .go-basket {
+            display: inline-block;
             margin-top: 25px;
             margin-bottom: 15px;
             color: #e84147;
             background: transparent;
-            border: none;
-            outline: none;
-            font-size: 15px;
+            font-size: 20px;
             font-style: italic;
+            font-family: 'Open Sans', sans-serif;
             position: relative;
             left: 50%;
             transform: translate(-50%);
+            text-decoration: none;
         }
 
         td:nth-of-type(5) {
@@ -151,6 +156,7 @@
 <div class="popap-windows">
     <button class="close-btn"></button>
     <table>
+        <thead>
         <tr>
             <th>Название</th>
             <th>Кол-во</th>
@@ -159,6 +165,7 @@
             <th></th>
             <th>Итого</th>
         </tr>
+        </thead>
         <tr>
             <td>Медведь девочка</td>
             <td>1шт.</td>
@@ -215,7 +222,7 @@
             <span>Сумма без скидки: 11 000р. &mdash;</span>
         </div>
     </div>
-    <button class="go-basket">перейти в корзину &rarr;</button>
+    <a href="#" class="go-basket">перейти в корзину &rarr;</a>
 </div>
 </body>
 </html>

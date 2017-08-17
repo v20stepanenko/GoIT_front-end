@@ -4,39 +4,46 @@
     <meta charset="UTF-8">
     <title>m6 hw2 t1</title>
     <style>
-        table{
+        table {
             font-family: sans-serif;
             text-align: center;
             border-collapse: collapse;
         }
-        table *{
+
+        table * {
             border: 1px solid black;
             padding: 4px;
         }
-        table *:first-letter{
+
+        table *:first-letter {
             text-transform: uppercase;
         }
-        th{
-            font-weight: 600;
+
+        thead tr:nth-of-type(2) th{
+            font-weight: 100;
         }
-        tr:nth-of-type(n+3) td:first-of-type{
+
+        tr td:first-of-type {
             text-align: left;
         }
     </style>
 </head>
 <body>
 <table>
+    <thead>
     <tr>
         <th rowspan="2">напиток</th>
         <th colspan="5">человечек</th>
     </tr>
     <tr>
-        <td>незнайка</td>
-        <td>пончик</td>
-        <td>торопыжка</td>
-        <td>пилюлькин</td>
-        <td>всего</td>
+        <th>незнайка</th>
+        <th>пончик</th>
+        <th>торопыжка</th>
+        <th>пилюлькин</th>
+        <th>всего</th>
     </tr>
+    </thead>
+    <tbody>
     <tr>
         <td>квас, л</td>
         <td>2</td>
@@ -77,6 +84,7 @@
         <td>2</td>
         <td>13</td>
     </tr>
+    </tbody>
 </table>
 </body>
 </html>
