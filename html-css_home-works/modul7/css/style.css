@@ -7,7 +7,7 @@ body {
     font-weight: normal;
     font-variant: normal;
     background-attachment: fixed;
-    background-image: url(images/strip.png);
+    background-image: url(../images/strip.png);
     background-color: #fff;
     /*background: #fff url(images/strip.png) fixed; Странно работает, меняет угол */
 }
@@ -37,7 +37,7 @@ h1 {
     width: 960px;
     border-radius: 5px 5px 5px 5px;
     box-shadow: 0 0 10px;
-    background: #fff url(images/header-bg.png) repeat-x;
+    background: #fff url(../images/header-bg.png) repeat-x;
     margin: 25px auto;
     border: 1px solid #000;
 }
