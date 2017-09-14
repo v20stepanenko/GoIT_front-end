@@ -70,7 +70,7 @@ aside h2 {
 @media only screen and (max-width: 490px) {
     .wrapper{
         padding: 6px;
-        width: 100%;
+        width: 99%;
     }
     section{
         flex-direction: column;
