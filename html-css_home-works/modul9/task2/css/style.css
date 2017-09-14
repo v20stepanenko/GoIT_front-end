@@ -93,3 +93,13 @@ nav div{
 .flex-s3-text{
     margin-bottom: 50px;
 }
+
+.second-line{
+    margin-top: 27px;
+}
+
+.second-line .col:first-of-type{
+    font-weight: bold;
+    font-size: 18px;
+
+}
