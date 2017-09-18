@@ -1,4 +1,13 @@
-.wrapper-page{
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    color:  #333;
+    text-decoration: none;
+}
+
+.conatainer{
     width: 767px;
     margin: 0 auto;
 }
@@ -7,6 +16,10 @@
     justify-content: flex-end;
     flex-basis: 100%;
     background: linear-gradient(to right, rgba(138,0,2,1) 0%, rgba(189,0,0,1) 42%, rgba(230,0,0,1) 100%);
+}
+
+.left-part{
+    width: 244px;
 }
 
 header{
@@ -49,4 +62,17 @@ header{
 }
 .sel-currencies select{
     width: 132px;
+}
+
+.below-header{
+    display: flex;
+}
+nav ul{
+    list-style-image: url("../myImage/navitem.png");
+    margin: 28px 0 28px 50px ;
+}
+
+nav li{
+    border-bottom: 1px dotted #ddd;
+    width: 100%;
 }
