@@ -1,78 +1,153 @@
-*{
+@font-face {
+    font-family: Myriad Pro; /* Имя шрифта */
+    src: url(../../fonts/MyriadPro-Regular.otf); /* Путь к файлу со шрифтом */
+}
+
+* {
     margin: 0;
     padding: 0;
 }
-a{
-    color:  #333;
+
+a {
+    color: #333;
     text-decoration: none;
 }
 
-.conatainer{
-    width: 767px;
+.conatainer {
+    max-width: 767px;
     margin: 0 auto;
 }
-.gradient-bg{
+
+.gradient-bg {
     display: flex;
     justify-content: flex-end;
-    flex-basis: 100%;
-    background: linear-gradient(to right, rgba(138,0,2,1) 0%, rgba(189,0,0,1) 42%, rgba(230,0,0,1) 100%);
+    background: linear-gradient(to right, rgba(138, 0, 2, 1) 0%, rgba(189, 0, 0, 1) 42%, rgba(230, 0, 0, 1) 100%);
 }
 
-.left-part{
-    width: 244px;
+.left-part {
+    width: 32%;
 }
 
-header{
+.right-part {
+    width: 68%;
+}
+
+header {
     display: flex;
     justify-content: space-between;
     font-family: "Tahoma", sans-serif;
-    color:  #fff;
+    color: #fff;
     font-size: 10px;
 }
 
-.header-info>div{
+.header-info > div {
     flex-direction: column;
     padding-top: 18px;
 }
-.header-info>div>div:first-child{
+
+.header-info > div > div:first-child {
     margin-bottom: 6px;
 }
-.logo{
+
+.logo {
     display: flex;
 }
-.shop-basket{
+
+.logo img {
+    width: 100%;
+}
+
+.shop-basket {
     display: flex;
 }
-.shop-basket span{
+
+.shop-basket span {
     font-size: 14px;
     padding: 0 20px;
 }
-.select-lang{
+
+.select-lang {
     border-left: 1px dashed #fff;
     border-right: 1px dashed #fff;
     padding: 0 20px;
 }
-.lang-item{
+
+.lang_item {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
-.sel-currencies{
+
+.sel-currencies {
     display: flex;
     padding: 0 26px 0 21px;
 }
-.sel-currencies select{
+
+.sel-currencies select {
     width: 132px;
 }
 
-.below-header{
+.below-header {
     display: flex;
 }
-nav ul{
+
+nav ul {
     list-style-image: url("../myImage/navitem.png");
-    margin: 28px 0 28px 50px ;
+    margin: 28px 0 28px 50px;
 }
 
-nav li{
+nav li {
     border-bottom: 1px dotted #ddd;
     width: 100%;
 }
+
+.promotion {
+    position: relative;
+    justify-content: flex-end;
+    text-align: right;
+    padding-right: 25px;
+}
+
+.promotion img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+
+.promotion > span:first-of-type {
+    color: #9f0000;
+    font-size: 38px;
+    font-family: 'Mariad Pro', sans-serif;
+    line-height: 0.5;
+    margin: 31px 0;
+    display: inline-block;
+}
+
+.promotion > span:first-of-type > span {
+    font-size: 14px;
+    color: #1f1f1f;
+}
+.promotion>div{
+    background: #efefef;
+    color: #1f1f1f;
+    position: relative;
+    margin-right: 25px;
+    padding-right: 75px;
+}
+.promotion div>span{
+    background: #efefef;
+    color: #1f1f1f;
+    position: relative;
+    display: inline-block;
+
+}
+.arrow{
+    position: absolute;
+    right: -25px;
+    bottom: 0;
+    display: inline-block;
+}
+.arrow>svg:first-of-type{
+    margin-right: -35px;
+}
+
