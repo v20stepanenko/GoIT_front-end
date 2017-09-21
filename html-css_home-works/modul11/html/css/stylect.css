@@ -109,8 +109,8 @@ nav li {
 
 .promotion img {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: -20px;
+    left: -20px;
     z-index: 3;
 }
 
@@ -131,16 +131,20 @@ nav li {
     background: #efefef;
     color: #1f1f1f;
     position: relative;
-    margin-right: 25px;
-    padding-right: 75px;
+    margin: 0 25px 0 50px;
+    padding: 5px 75px 5px 0;
 }
 .promotion div>span{
     background: #efefef;
     color: #1f1f1f;
     position: relative;
     display: inline-block;
-
+    font-size: 14px;
 }
+.promotion div>span>span{
+    color: #9f0000;
+}
+
 .arrow{
     position: absolute;
     right: -25px;
