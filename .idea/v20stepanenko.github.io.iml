@@ -8,5 +8,15 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="electron-config-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="electron-debug-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="electron-devtools-installer-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="electron-json-storage-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="electron-notifications-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="electron-notify-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="electron-packager-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="electron-settings-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="electron-store-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="electron-window-state-DefinitelyTyped" level="application" />
   </component>
 </module>
