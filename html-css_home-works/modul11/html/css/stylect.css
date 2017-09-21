@@ -111,6 +111,7 @@ nav li {
     position: absolute;
     top: -20px;
     left: -20px;
+    width: 40%;
     z-index: 3;
 }
 
@@ -161,14 +162,37 @@ section .right-part{
     background: #1f1f1f;
 }
 section .title{
+    display: block;
     color: white;
     font-size: 14px;
     font-family: "Mariad Pro", sans-serif;
+    width: 100%;
+
+}
+section .products{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 10px ;
+}
+section .product{
+    background: white;
+    display: flex;
+    flex-basis: 100%;
+    flex-direction: column;
+}
+section .product-wrapper{
+    display: flex;
+    padding: 2px;
+    border: 1px solid white;
+    flex-basis: 45%;
 }
 
-section .product{
-    display: inline-block;
-    background: white;
-    width: 45%;
-    border: 1px double white;
+.product img{
+    float: left;
+}
+.product div:first-child:after{
+    content: ' ';
+    display: block;
+    clear: both;
 }
