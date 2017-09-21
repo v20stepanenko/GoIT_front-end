@@ -169,10 +169,11 @@ section .title{
     width: 100%;
 
 }
-section .products{
+section .products-wrapper
+{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding: 0 10px ;
 }
 section .product{
