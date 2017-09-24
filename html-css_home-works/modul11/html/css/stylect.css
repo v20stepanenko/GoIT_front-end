@@ -188,9 +188,8 @@ section .right-part .title {
     color: white;
     font-size: 14px;
     font-family: "Mariad Pro", sans-serif;
-    margin-left: 2.3%;
     width: 100%;
-
+    margin: 6px 0 12px 2.3%;
 }
 
 section .products-wrapper {
@@ -330,7 +329,7 @@ section .product-wrapper {
 
 }
 
-.end-block-products .end-items:first-of-type div:nth-of-type(2) {
+.end-items:first-of-type div:nth-of-type(2) {
     font-size: 19px;
     font-family: "Avian", sans-serif;
     color: #de0303;
@@ -348,7 +347,7 @@ section .product-wrapper {
     float: right;
 }
 .end-items {
-    padding:11px 15px 17px;
+    padding: 22px 15px 11px 0;
     z-index: 1;
 }
 .mask{
@@ -371,6 +370,15 @@ section .product-wrapper {
     z-index: 1;
 }
 
+.end-items{
+    display: flex;
+}
+.end-items img{
+    max-width: 45%;
+    position: absolute;
+    z-index: 2;
+}
+
 .end-items>div{
     z-index: 3;
     position: relative;
@@ -391,5 +399,21 @@ section .product-wrapper {
     font-family: 'Officina Sans Std', sans-serif;
     font-weight: bold;
     font-size: 12px;
+    margin-top: 22px;
 }
 
+div:first-of-type div:first-of-type div .logitech{
+    font-size: 12px;
+}
+
+aside{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+aside ul{
+    margin: 28px 0 28px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
