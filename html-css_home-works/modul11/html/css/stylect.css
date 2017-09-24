@@ -3,6 +3,21 @@
     src: url(../../fonts/MyriadPro-Regular.otf); /* Путь к файлу со шрифтом */
 }
 
+@font-face {
+    font-family: Helvetica Neue LT Pro; /* Имя шрифта */
+    src: url(../../fonts/HelveticaNeueLTPro-Hv.otf); /* Путь к файлу со шрифтом */
+}
+
+@font-face {
+    font-family: Avian; /* Имя шрифта */
+    src: url(../../fonts/AVIAN.ttf); /* Путь к файлу со шрифтом */
+}
+
+@font-face {
+    font-family: Officina Sans Std; /* Имя шрифта */
+    src: url(../../fonts/OfficinaSansStd-Book.otf); /* Путь к файлу со шрифтом */
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -128,72 +143,253 @@ nav li {
     font-size: 14px;
     color: #1f1f1f;
 }
-.promotion>div{
+
+.promotion > div {
     background: #efefef;
     color: #1f1f1f;
     position: relative;
     margin: 0 25px 0 50px;
     padding: 5px 75px 5px 0;
 }
-.promotion div>span{
+
+.promotion div > span {
     background: #efefef;
     color: #1f1f1f;
     position: relative;
     display: inline-block;
     font-size: 14px;
 }
-.promotion div>span>span{
+
+.promotion div > span > span {
     color: #9f0000;
 }
 
-.arrow{
+.arrow {
     position: absolute;
     right: -25px;
     bottom: 0;
     display: inline-block;
 }
-.arrow>svg:first-of-type{
+
+.arrow > svg:first-of-type {
     margin-right: -35px;
 }
-section{
+
+section {
     display: flex;
 }
-section .right-part{
+
+section .right-part {
     background: #1f1f1f;
 }
-section .title{
+
+section .right-part .title {
     display: block;
     color: white;
     font-size: 14px;
     font-family: "Mariad Pro", sans-serif;
+    margin-left: 2.3%;
     width: 100%;
 
 }
-section .products-wrapper
-{
+
+section .products-wrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    padding: 0 10px ;
+    padding: 0 10px;
 }
-section .product{
+
+section .product {
     background: white;
     display: flex;
     flex-basis: 100%;
     flex-direction: column;
+    padding: 17px;
 }
-section .product-wrapper{
+
+section .product-wrapper {
     display: flex;
     padding: 2px;
     border: 1px solid white;
     flex-basis: 45%;
+    margin-bottom: 15px;
 }
 
-.product img{
-    float: left;
+.product > div:last-of-type {
+    padding-top: 10px;
+    border-top: 2px dashed #cecece;
+    display: flex;
+    justify-content: space-around;
 }
-.product div:first-child:after{
+
+.product > div:last-of-type > button{
+    outline: none;
+    border: none;
+    padding: 4px 18px 7px 15px;
+    position: relative;
+    font-size: 10px;
+    font-family: "Mariad Pro", sans-serif;
+    color: white;
+}
+
+.product > div:last-of-type > button:before {
     content: ' ';
-    display: block;
-    clear: both;
+    position: absolute;
+    display: inline-block;
+    bottom: 0;
+    right: 0;
+    width: 5px;
+    height: 5px;
+    background: #fff;
 }
+
+.product > div:last-of-type > button:after{
+    content: ' ';
+    position: absolute;
+    display: inline-block;
+    bottom: 0;
+    right: 0;
+    border: 5px solid transparent; /* Прозрачные границы */
+    border-top: 5px solid black; /* Добавляем треугольник */
+    border-left: 5px solid black; /* Добавляем треугольник */
+    background: #fff;
+}
+
+.product > div:last-of-type > button:first-of-type {
+    background: linear-gradient(to right, rgba(138, 0, 2, 1) 0%, rgba(189, 0, 0, 1) 42%, rgba(230, 0, 0, 1) 100%);
+}
+
+.product > div:last-of-type > button:last-of-type {
+    background: #505050;
+}
+
+.product span:first-of-type {
+    font-family: "Tahoma", sans-serif;
+    font-size: 11px;
+}
+
+.product span:nth-of-type(2) {
+    color: red;
+    display: inline-block;
+}
+
+.product div:first-of-type {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.product > div:first-of-type > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.end-block-products {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0 10px;
+}
+
+.mask-light{
+    position: relative;
+}
+
+.end-items:after {
+    content: ' ';
+    display: inline-block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.mask-light:before {
+    background: linear-gradient(135deg, rgba(248, 80, 50, 0.02) 64%, rgba(241, 111, 92, 0.02) 71%, rgba(241, 108, 88, 0.02) 72%, rgba(246, 41, 12, 0.69) 91%, rgba(31, 31, 31, 1) 100%);
+}
+
+.gray-black:before{
+    background: linear-gradient(45deg, rgba(248, 80, 50, 0.02) 64%, rgba(241, 111, 92, 0.02) 71%, rgba(237, 113, 95, 0.02) 72%, rgba(156, 153, 153, 0.69) 91%, rgba(31, 31, 31, 1) 100%);;
+}
+
+.end-block-products .product-wrapper > div {
+    width: 100%;
+}
+
+.end-items>div>div:first-of-type{
+    background: linear-gradient(to bottom, rgba(149, 7, 33, 1) 0%, rgba(43, 15, 15, 1) 48%, rgba(189, 32, 27, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 41px;
+    font-family: "Helvetica Neue LT Pro", sans-serif;
+    color: rgb(222, 3, 3);
+    text-transform: uppercase;
+    line-height: 1;
+
+}
+
+.end-block-products .end-items:first-of-type div:nth-of-type(2) {
+    font-size: 19px;
+    font-family: "Avian", sans-serif;
+    color: #de0303;
+}
+
+.end-block-products .end-items:first-of-type div:nth-of-type(3) {
+    color: #1f1f1f;
+    font-family: "Avian", sans-serif;
+    font-size: 12px;
+}
+.end-items div{
+    text-align: right;
+}
+.end-items button{
+    float: right;
+}
+.end-items {
+    padding:11px 15px 17px;
+    z-index: 1;
+}
+.mask{
+    position: relative;
+}
+.mask:after, .mask:before{
+    content: ' ';
+    display: inline-block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.mask:after{
+    z-index: 0;
+    background: #FFF;
+}
+.mask:before{
+    z-index: 1;
+}
+
+.end-items>div{
+    z-index: 3;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+}
+
+.end-items button{
+    background: transparent;
+    background-image: url("../myImage/btn-detalis.png");
+    width: 79px;
+    height: 20px;
+    outline: none;
+    border: none;
+    color: white;
+    font-family: 'Officina Sans Std', sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+}
+
