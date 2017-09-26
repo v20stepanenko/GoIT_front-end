@@ -27,6 +27,9 @@ a {
     color: #333;
     text-decoration: none;
 }
+body{
+    padding-bottom: 50px;
+}
 
 .conatainer {
     max-width: 767px;
@@ -106,7 +109,7 @@ header {
 }
 
 nav ul {
-    list-style-image: url("../myImage/navitem.png");
+    list-style-image: url("../image/navitem.png");
     margin: 28px 0 28px 50px;
 }
 
@@ -228,7 +231,8 @@ section .product-wrapper {
     padding: 4px 18px 7px 15px;
     position: relative;
     font-size: 10px;
-    font-family: "Mariad Pro", sans-serif;
+    font-weight: bold;
+    font-family: "ITC Officina Sans Std Book", sans-serif;
     color: white;
 }
 
@@ -241,6 +245,10 @@ section .product-wrapper {
     width: 5px;
     height: 5px;
     background: #fff;
+}
+.product-link>div>div{
+    display: flex;
+    flex-direction: column;
 }
 
 .product > div:last-of-type > button:after{
@@ -277,12 +285,6 @@ section .product-wrapper {
     display: flex;
     justify-content: space-around;
     margin-bottom: 10px;
-}
-
-.product > div:first-of-type > div {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
 .end-block-products {
@@ -390,7 +392,7 @@ section .product-wrapper {
 
 .end-items button{
     background: transparent;
-    background-image: url("../myImage/btn-detalis.png");
+    background-image: url("../image/btn-detalis.png");
     width: 79px;
     height: 20px;
     outline: none;
@@ -411,9 +413,98 @@ aside{
     justify-content: space-between;
     flex-direction: column;
 }
+aside .title{
+    background: #cbcbcb;
+    padding: 9px 13px 6px;
+    color: #1f1f1f;
+    font-family: 'ITC Officina Sans Std Book', sans-serif;
+    font-size: 14px;
+}
 aside ul{
-    margin: 28px 0 28px 50px;
+    margin: 6px 0 0 50px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    list-style-image: url("../image/arrow.png");
+}
+aside li{
+    border-bottom: 1px dotted #ddd;
+    width: 100%;
+    margin-bottom: 5px;
+    padding-bottom: 3px;
+    font-size: 12px;
+}
+
+.money-back{
+    position: relative;
+    color: #fff;
+    background: #cbcbcb;
+    overflow: hidden;
+    display: flex;
+    font-family: "ITC Officina Sans Std Book", sans-serif;
+    align-self: flex-end;
+    width: 82%;
+    padding: 7px;
+}
+.money-back div{
+    position: relative;
+    z-index: 1;
+    align-self: center;
+    font-weight: bold;
+}
+.money-back div:first-child{
+    font-size: 35px;
+}
+.money-back div:nth-child(2){
+    font-size: 11px;
+    margin-left: 10px;
+}
+.money-back div:nth-child(2) span{
+    font-size: 13px;
+}
+
+.money-back svg{
+    position: absolute;
+    top: -34px;
+    left: -91px;
+    z-index: 0;
+    fill: #b2b2b2;
+}
+footer{
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 33%, rgba(190,190,190,1) 96%, rgba(190,190,190,1) 100%);
+    padding-top: 20px;
+    display: flex;
+}
+footer .left-part{
+    border-right: 1px dashed #fff;
+}
+footer .left-part ul{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 25px 18px 50px;
+    list-style: none;
+}
+
+footer .right-part{
+    font-size: 10px;
+    font-family: "Tahoma", sans-serif;
+    padding-left: 53px;
+}
+
+.site-map {
+    display: flex;
+    list-style: none;
+    text-transform: uppercase;
+}
+
+.site-map li{
+    margin-right: 5px;
+}
+
+.site-map li:after{
+    content: '|';
+    margin-left: 5px;
+}
+.site-map li:last-of-type:after{
+    content: ' ';
 }
