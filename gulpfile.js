@@ -4,7 +4,7 @@ var gulp = require('gulp'), // Подключаем Gulp
 gulp.task('browser-sync', function () { // Создаем таск browser-sync
     browserSync({ // Выполняем browserSync
         server: { // Определяем параметры сервера
-            baseDir: 'html-css_home-works' // Директория для сервера - app
+            baseDir: 'html-css' // Директория для сервера - app
         },
         notify: false // Отключаем уведомления
     });
