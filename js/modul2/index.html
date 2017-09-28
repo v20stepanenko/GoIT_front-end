@@ -78,11 +78,13 @@
     <p>Пользователь вводит 3 числа. Найти и вывести максимальное из данных трех чисел.</p>
     <input type="number"><input type="number"><input type="number">
 </div>
+
+<a href="task6.html"><h2>TASK 6</h2></a>
 <script !src="">
     (function crateTaskItems() {
         tasksBlocks = document.getElementsByClassName('task');
         tasksBlocks.forEach = Array.prototype.forEach;
-        tasksBlocks.forEach(function (item, iterator) {
+        tasksBlocks.forEach(function (item) {
             var writeBlock = document.createElement('div');
             writeBlock.className = 'write';
             item.appendChild(writeBlock);

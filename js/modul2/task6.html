@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js m2 t5</title>
+</head>
+<body>
+<h2> JS код входит в верстку, его можно посмотреть прямо в инспекторе</h2>
+<h2>Вывести четные числа от 0 до 101.</h2>
+<div id="task6-1"></div>
+<script !src="">
+    void function () {
+        var evenNumber = String();
+        for (let i = 0; i < 101; i += 2) {
+            evenNumber += i + '<br/>'
+        }
+        document.getElementById('task6-1').innerHTML = evenNumber;
+    }()
+</script>
+<h2>Вывести числа в следущей последовательности: 200 199 198 ... 0.</h2>
+<div id="task6-2"></div>
+<script !src="">
+    void function () {
+        var reverseNumber = String();
+        for (let i = 200; i >= 0; i--) {
+            reverseNumber += i + '<br/>'
+        }
+        document.getElementById("task6-2").innerHTML = reverseNumber;
+    }()
+</script>
+<h2>Найти сумму чисел от 0 до 100 (включительно). (0+1+2+3+4+5).</h2>
+<div id="task6-3"></div>
+<script !src="">
+    void function () {
+        var sum = 0;
+        for (let i = 0; i <= 100; i++) {
+            sum += i;
+        }
+        document.getElementById('task6-3').innerHTML = sum
+    }()
+</script>
+<h2>Задайте два input. В первый вводится число, во второе его степень. С помощью цикла возведите число в степень.
+    Напечатайте результат.</h2>
+<input id="number" type="number"><input id="degree" type="number">
+<div id="task6-4"></div>
+<script !src="">
+    void function () {
+        var num = document.getElementById('number'),
+            degree = document.getElementById('degree');
+        var arrInput = [num, degree];
+
+        function multiply(number, degree) {
+            var multipNumber = number;
+            for (let i = 0; i < degree; i++) {
+                multipNumber *= number;
+            }
+            return multipNumber;
+        }
+
+        arrInput.forEach(function (item) {
+            item.onkeyup = function () {
+                document.getElementById('task6-4').innerHTML = multiply(parseInt(num.value), parseInt(degree.value))
+            }
+        })
+
+    }()
+</script>
+<h2>С помощью цикла напечатайте таблицу умножения на 7 от 1 до 9.<br>
+    Т.е.: <br>
+    1*7=7 <br>
+    2*7=14 <br>
+    3*7=21...<br>
+</h2>
+<div id="task6-5"></div>
+<script !src="">
+    void function () {
+        var text = String();
+        for (let i = 1; i <= 9; ++i) {
+            text += i + '*7=' + i * 7 + '<br/>';
+        }
+        document.getElementById('task6-5').innerHTML = text;
+    }()
+</script>
+<h2>С помощью цикла вывести произведение чисел от 1 до 50.</h2>
+<div id="task6-6"></div>
+<script !src="">
+    void function () {
+        var multiply = 1;
+        for (let i = 2; i <= 50; i++) {
+            multiply *= i;
+        }
+        document.getElementById('task6-6').innerHTML = multiply;
+    }()
+</script>
+<h2>Выведите с помощью цикла коды спецсимволов от 1000 до 2000. Напомню, что спецсимвол получается комбинацией &#число;
+    Например &# 1222;</h2>
+<div id="task6-7"></div>
+<script !src="">
+    void function () {
+        var specChar = String();
+        for (let i = 1000; i <= 2000; i++) {
+           specChar += "&#" + i + ' '
+        }
+        document.getElementById('task6-7').innerHTML = specChar;
+    }()
+</script>
+</body>
+</html>
