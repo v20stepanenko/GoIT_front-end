@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js m2</title>
+    <style>
+        input[type='number'] {
+            -moz-appearance: textfield;
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+        .task {
+            border: 1px solid black;
+            margin: 10px 0;
+            padding: 10px;
+        }
+
+        .off {
+            height: 0;
+            overflow: hidden;
+        }
+
+        .code {
+            border: 2px dashed hotpink;
+        }
+
+        .tip {
+            font-size: 35px;
+            font-weight: bold;
+        }
+    </style>
+    <script !src="">
+
+    </script>
+</head>
+<body>
+<div class="tip">JS код можно открывать и сворачивать повторным нажатием на него</div>
+<div class="task">
+    <h2>Task 1</h2>
+    <p>Пользователь вводит год рождения в input. Пользователь может ввести год рождения в двух форматах: 1988 или 02
+        (имеется ввиду 2002). Программа должна вывести количество лет которое исполнилось пользователю.</p>
+    <input id="old-in" type="number">
+
+</div>
+<div class="task">
+    <h2>Task 2</h2>
+    <p>Пользователь вводит 2 числа. Найти и вывести максимальное из данных двух чисел. Учтите вариант равенства
+        чисел.</p>
+    <input id="first-num" type="number">
+    <input id="second-num" type="number">
+  </div>
+
+<div class="task">
+    <h2>Task 3</h2>
+    <p>В первом подъезде номера квартир от 1 до 20, во втором от 21 до 64, в третьем от 65 до 80. Пользователь вводит
+        номер квартиры, необходимо указать в каком она подъезде.
+    </p>
+    <input id="float-num" type="number" min="1" max="80">
+</div>
+<div class="task">
+    <h2>Task 4</h2>
+    <p>Два поля ввода: Логин и пароль. Есть 3 пользователя: <br>
+        ivan -> 333 <br>
+        ssss-> 666 <br>
+        gibs <br>
+        Если введен правильный логин и пароль вывести “Добро пожаловать”, в противном случае - вывести “ошибка”.
+    </p>
+    <div>Логин: <input type="text" id="login"></div>
+    <div>Пароль: <input type="password" id="pass"></div>
+    <button id="sing-in">ВОйти</button>
+</div>
+<div class="task" id="task5">
+    <h2>Task 5</h2>
+    <p>Пользователь вводит 3 числа. Найти и вывести максимальное из данных трех чисел.</p>
+    <input type="number"><input type="number"><input type="number">
+</div>
+<script !src="">
+    (function crateTaskItems() {
+        tasksBlocks = document.getElementsByClassName('task');
+        tasksBlocks.forEach = Array.prototype.forEach;
+        tasksBlocks.forEach(function (item, iterator) {
+            var writeBlock = document.createElement('div');
+            writeBlock.className = 'write';
+            item.appendChild(writeBlock);
+            var codeBlock = document.createElement('div');
+            codeBlock.className = 'code';
+            codeBlock.innerHTML = 'посмотреть JS';
+            var jsText = document.createElement('div');
+            jsText.classList.add('js', 'off');
+            codeBlock.appendChild(jsText);
+            item.appendChild(codeBlock);
+        });
+    })();
+
+    function write(elem, text) {
+        elem.innerHTML = text;
+    }
+    function viewJs(codeBlock, code) {
+        var jsBlock = codeBlock.querySelector('.js');
+        jsBlock .innerHTML = '<pre>' + code + '</pre>';
+        codeBlock.onclick = () => {
+            jsBlock.classList.toggle('off');
+        };
+    }
+    function getTaskItem(index) {
+        taskBlock = tasksBlocks[index-1];
+        var writeBlock = taskBlock.querySelector('.write');
+        var codeBlock = taskBlock.querySelector('.code');
+        return {writeBlock : writeBlock, codeBlock: codeBlock};
+    }
+</script>
+<script src="js/task1.js"></script>
+<script src="js/task2.js"></script>
+<script src="js/task3.js"></script>
+<script src="js/task4.js"></script>
+<script src="js/task5.js"></script>
+</body>
+</html>
