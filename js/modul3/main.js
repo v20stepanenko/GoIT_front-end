@@ -1,56 +1,79 @@
-
 var arr = [];
 
-var submitButton =  document.querySelector('#submitButton');
+var arrInput= {
+    index: document.querySelector('#index'),
+    value: document.querySelector('#value'),
+    resetPlaceholder: function () {
+        arrInput.index.value = '';
+        arrInput.value.value = '';
+    }
+};
+
+
+
+var submitButton = document.querySelector('#submitButton');
 
 submitButton.addEventListener('click', submitForm);
 
-function submitForm () {
-    var index = document.querySelector('#index');
-    var value = document.querySelector('#value');
-    var readyIndex = parseInt(index.value);
+function writeArr() {
+    var writeDiv = document.querySelector('#write');
+    writeDiv.innerHTML = arr;
+    arrInput.resetPlaceholder();
+}
 
-    arr[readyIndex] = value.value;
-    alert(arr);
+function submitForm() {
+    var readyIndex = parseInt(arrInput.index.value);
+    arr[readyIndex] = arrInput.value.value;
+    writeArr();
 }
 
 
-var popButton =  document.querySelector('#popButton');
+var popButton = document.querySelector('#popButton');
 
 popButton.addEventListener('click', popArray);
 
-function popArray () {
+function popArray() {
     arr.pop();
-    alert(arr);
+    writeArr();
 }
 
-var pushButton =  document.querySelector('#pushButton');
+var pushButton = document.querySelector('#pushButton');
 
 pushButton.addEventListener('click', pushArray);
 
-function pushArray () {
+function pushArray() {
     var value = document.querySelector('#value');
 
     arr.push(value.value);
-    alert(arr);
+    writeArr();
 }
 
-var shiftButton =  document.querySelector('#shiftButton');
+var shiftButton = document.querySelector('#shiftButton');
 
 shiftButton.addEventListener('click', shiftArray);
 
-function shiftArray () {
+function shiftArray() {
     arr.shift();
-    alert(arr);
+    writeArr();
 }
 
-var unshiftButton =  document.querySelector('#unshiftButton');
+var unshiftButton = document.querySelector('#unshiftButton');
 
 unshiftButton.addEventListener('click', unshiftArray);
 
-function unshiftArray () {
+function unshiftArray() {
     var value = document.querySelector('#value');
 
     arr.unshift(value.value);
-    alert(arr);
+    writeArr();
+}
+
+var resetButton = document.querySelector('#reset');
+
+resetButton.addEventListener('click', resetArray);
+
+
+function resetArray() {
+    arr = [];
+    writeArr();
 }
