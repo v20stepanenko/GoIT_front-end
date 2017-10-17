@@ -9,17 +9,15 @@ var arrInput= {
     }
 };
 
-
-
-var submitButton = document.querySelector('#submitButton');
-
-submitButton.addEventListener('click', submitForm);
-
 function writeArr() {
     var writeDiv = document.querySelector('#write');
     writeDiv.innerHTML = arr;
     arrInput.resetPlaceholder();
 }
+
+var submitButton = document.querySelector('#submitButton');
+
+submitButton.addEventListener('click', submitForm);
 
 function submitForm() {
     var readyIndex = parseInt(arrInput.index.value);
@@ -71,7 +69,6 @@ function unshiftArray() {
 var resetButton = document.querySelector('#reset');
 
 resetButton.addEventListener('click', resetArray);
-
 
 function resetArray() {
     arr = [];
