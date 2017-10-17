@@ -4,8 +4,8 @@ var arrInput= {
     index: document.querySelector('#index'),
     value: document.querySelector('#value'),
     resetPlaceholder: function () {
-        arrInput.index.value = '';
-        arrInput.value.value = '';
+        this.index.value = '';
+        this.value.value = '';
     }
 };
 
