@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../commonFiles/commonStyle.css">
+    <style>
+        p:before {
+            display: inline-block;
+            margin-right: 5px;
+            content: attr(sequence) ' ';
+        }
+        #restart {
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+<div class="task1">
+    <h2>Напишите функцию, которая выделяет все параграфы на странице красным цветом фона.</h2>
+    <p>Lorem ipsum dolor sit.</p>
+    <p>Lorem ipsum dolor sit.</p>
+    <p>Lorem ipsum dolor sit.</p>
+</div>
+<div class="task2">
+    <h2>Напишите функцию, которая добавляет тень всем изображениям на странице.</h2>
+    <img src="https://cs5.pikabu.ru/images/big_size_comm/2015-05_5/14324102294537.jpg" alt="dich">
+</div>
+<div class="task3">
+    <h2>Напишите функцию, которая нумерует все абзацы страницы и добавляет номер перед текстом абзацев.</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, deserunt!</p>
+    <p>Architecto eveniet explicabo ipsum modi molestiae nesciunt placeat porro unde?</p>
+    <p>Eveniet laborum natus non odit perspiciatis quae. Blanditiis, inventore, nulla!</p>
+</div>
+<div class="task4">
+    <h2> Используя глобальную переменную напишите функцию, которая будет подсчитывать количество нажатий на кнопки.
+        Кнопок – две, реализуйте их в HTML.</h2>
+    <div class="counter"></div>
+    <button>Button one</button>
+    <button>BUtton two</button>
+</div>
+<div class="task5">
+    <h2> Создайте функцию, которая получает два параметра – число и степень числа. Используя Math.Pow внутри функции,
+        возведите число в степень и выведите с помощью alert.</h2>
+    <input type="number" id="base" placeholder="base">
+    <input type="number" id="extent" placeholder="extent">
+    <button id="result">result</button>
+</div>
+<div class="task6">
+    <h2>Создайте функцию, которая принимает один параметр – строку, которая содержит тег. При вызове функции, она
+        подчеркивает все элементы на странице с данным тегом. Т.е. если пользователь вызвал функцию с параметром ‘p’ –
+        то подчеркиваются абзацы.</h2>
+    <input type="text" placeholder="Tag name">
+    <button>UnderLine</button>
+    <div>div</div>
+    <p>p</p>
+</div>
+<div class="task7">
+    <h2>Функция принимает параметр - возраст пользователя. Если число больше 16 – то выводим «добро пожаловать», если
+        меньше – “вы еще молоды”.</h2>
+    <input type="number" placeholder="old">
+    <button>Go</button>
+    <div class="writer"></div>
+</div>
+<div class="task8">
+    <h2> Модифицируйте предыдущий пример – учтите вариант, если пользователь не передал параметр в функцию. В таком
+        случае выведите сообщение – “Введите возраст”. Реализуйте два вида проверки наличия аргумента – проверка на
+        undefined и оператор ||.</h2>
+    <input type="number" placeholder="old">
+    <button>Go</button>
+    <div class="writer"></div>
+</div>
+<div class="task9">
+    <h2> Создайте функцию, которая считает длину массива и возвращает ее в виде числа. Массив в функцию передается как
+        аргумент. Если аргумент не задан – выводится сообщение об ошибке.</h2>
+    Функцию создал :) как и просили
+</div>
+<div class="task10">
+    <h2>Пользователь вводит числа. Если число больше 10, то функция возвращает квадрат числа, если меньше 7 – пишет, что
+        число меньше 7. Если 8, 9 – то возвращает соответственно 7 или 8. Реализуйте решение с несколькими return.</h2>
+    <input type="number" placeholder="7 || 10">
+    <div class="writer"></div>
+</div>
+<div class="task11">
+    <h2>
+        Напишите игру «Угадай число». При загрузке страницы генерируется случайное число от 0 до 10. Пользователю дается
+        три попытки угадать число (число вводиться в input). При каждой проверке выдается подсказка: больше или меньше.
+        При угадывании, завершении числа попыток выдается оповещение. Количество попыток выводиться на экран.
+    </h2>
+    <input type="number" id="inputNum">
+    <button id="submit">check</button>
+    <button id="restart">restart</button>
+    <div class="writer"></div>
+</div>
+<script src="../commonFiles/commonCourse.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
