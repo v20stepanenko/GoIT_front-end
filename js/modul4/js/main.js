@@ -6,7 +6,7 @@ function doSomethingElements(selector, perform) {
 commonFunctionView(doSomethingElements);
 
 let task1 = () => {
-    doSomethingElements('p', p => p.style.background = 'red');
+    doSomethingElements('p', p => p.style.background = 'red'); // Общая функция
     console.log('task1');
 };
 task1();
@@ -14,7 +14,7 @@ task1();
 viewJs('.task1', task1);
 
 let task2 = () => {
-    doSomethingElements('img', img => img.style.boxShadow = '10px 10px 0px -6px rgba(0,0,0,0.75)');
+    doSomethingElements('img', img => img.style.boxShadow = '10px 10px 0px -6px rgba(0,0,0,0.75)'); // Общая функция
     console.log('task2');
 };
 task2();
