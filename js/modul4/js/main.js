@@ -25,7 +25,7 @@ let task3 = () => {  //Решение связываеться с стилями
     // и я не совсем понял задание
     doSomethingElements('p', ((pElem, pIndex) => {
         pElem.setAttribute('sequence', `№ ${pIndex}:`);
-    }))
+    }));
     console.log('task3');
 };
 task3();
@@ -121,19 +121,20 @@ viewJs('.task8', task8);
 let task9 = () => {
     function lengthArr(arr) {
         if (arguments.length === 0) {
-            throw new NoArgumentTask9("vse normalno eto ya otlavlivayu svoi exception po usloviyam zadachi");
+            throw "vse normalno eto ya otlavlivayu svoi exception po usloviyam zadachi";
         } else if (arr.length !== undefined) {
             console.log(arr.length);
         }
     }
-
+    console.log('start task9');
     lengthArr([5, 5, 88]);
 
     try {
         lengthArr();
     } catch (e) {
-        console.error(e, e.message);
+        console.error(e);
     }
+    console.log('end task9');
     console.log('task9');
 };
 task9();
@@ -158,7 +159,7 @@ let task10 = () => {
 
   inputNumber.addEventListener('keyup', () =>{
       writer.innerHTML = task(parseFloat(inputNumber.value));
-  })
+  });
     console.log('task10');
 };
 task10();
