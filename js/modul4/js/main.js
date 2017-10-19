@@ -121,7 +121,7 @@ viewJs('.task8', task8);
 let task9 = () => {
     function lengthArr(arr) {
         if (arguments.length === 0) {
-            throw new NoArgument("lengthArr function don't have arguments");
+            throw new NoArgumentTask9("vse normalno eto ya otlavlivayu svoi exception po usloviyam zadachi");
         } else if (arr.length !== undefined) {
             console.log(arr.length);
         }
@@ -132,7 +132,7 @@ let task9 = () => {
     try {
         lengthArr();
     } catch (e) {
-        console.error(e);
+        console.error(e, e.message);
     }
     console.log('task9');
 };
@@ -143,7 +143,7 @@ viewJs('.task9', task9);
 let task10 = () => {
   function task(input) {
       if(input > 10){
-          return Math.sqrt(input);
+          return Math.pow(input, 2);
       }else if(input < 7){
           return 'число меньше 7';
       }else if(input === 8 || input ===9){
