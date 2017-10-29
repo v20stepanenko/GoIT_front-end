@@ -64,121 +64,82 @@
     inputFirstName = form.querySelector('#first-name'),
     inputSecondName = form.querySelector('#second-name'),
     inputEmail = form.querySelector('#email'),
-    submitBtn = form.querySelector('#submit');
+    pass = form.querySelector('#pass'),
+    submit = form.querySelector('#submit');
 
-  function findCharAtString (string, ...char) {
-    let arrChar = Array.from(string);
-    let result = false;
-    char.forEach(char => {
-     if(arrChar.some(stringChar=> stringChar === char)){
-       result = true;
-       return;
-     }
-    });
-    return result;
+  form.validatyArr = [];
+  form.validSubmit = function () {
+    return this.validatyArr.every(validObj => validObj.valid);
   }
 
-  let arrNoValid = [' ', '.', '@', '#']
+  function validClass (context) {
+    context.classList.remove('invalid');
+    context.classList.add('valid');
+  }
 
-  submitBtn.addEventListener('click', () => {
+  function invalidClass (context) {
+    context.classList.add('invalid');
+    context.classList.remove('valid');
+  }
 
+  function validName (input) {
+
+    if (input.value.match(/^[a-z]+$/i)) {
+      validClass(input)
+      return true;
+    }else{
+      invalidClass(input)
+      return false;
+    }
+  }
+
+  function checkNameInput (input) {
+    let validObj = {};
+    form.validatyArr.push(validObj);
+    input.addEventListener('keyup', (event)=>{
+     validObj.valid = validName(event.target);
+    });
+  }
+  checkNameInput(inputFirstName);
+  checkNameInput(inputSecondName);
+  (function checkEmail () {
+    let validObj = {};
+    form.validatyArr.push(validObj);
+    inputEmail.addEventListener('keyup', (event)=>{
+      if(inputEmail.value.match(/^(\d|\.|[a-z])+@[a-z]+\.[a-z]{2,10}$/i)){
+      validClass(event.target);
+      validObj.valid = true;
+      }else{
+        invalidClass(event.target);
+        validObj.valid = false;
+      }
+    })
+  })();
+
+  void function checkPass () {
+    let validObj = {};
+    form.validatyArr.push(validObj);
+    pass.addEventListener('keyup', (event)=>{
+      if(pass.value.match(/.{5}/)){
+        validClass(event.target);
+        validObj.valid = true;
+      }else{
+        invalidClass(event.target);
+        validObj.valid = false;
+      }
+    });
+  }();
+  submit.addEventListener('click', ()=>{
+    console.log(form.validatyArr);
+    console.log(form.validSubmit());
   })
-
 })();
 
+
 (()=>{
-  function CustomValidation() { }
-
-  CustomValidation.prototype = {
-    // Установим пустой массив сообщений об ошибках
-    invalidities: [],
-
-    // Метод, проверяющий валидность
-    checkValidity: function(input) {
-
-      var validity = input.validity;
-
-      if (validity.patternMismatch) {
-        this.addInvalidity('This is the wrong pattern for this field');
-      }
-
-      if (validity.rangeOverflow) {
-        var max = getAttributeValue(input, 'max');
-        this.addInvalidity('The maximum value should be ' + max);
-      }
-
-      if (validity.rangeUnderflow) {
-        var min = getAttributeValue(input, 'min');
-        this.addInvalidity('The minimum value should be ' + min);
-      }
-
-      if (validity.stepMismatch) {
-        var step = getAttributeValue(input, 'step');
-        this.addInvalidity('This number needs to be a multiple of ' + step);
-      }
-
-      // И остальные проверки валидности...
-    },
-
-    // Добавляем сообщение об ошибке в массив ошибок
-    addInvalidity: function(message) {
-      this.invalidities.push(message);
-    },
-
-    // Получаем общий текст сообщений об ошибках
-    getInvalidities: function() {
-      return this.invalidities.join('. \n');
-    }
-  };
-
-// Добавляем обработчик клика на кнопку отправки формы
-  submit.addEventListener('click', function(e) {
-    // Пройдёмся по всем полям
-    for (var i = 0; i < inputs.length; i++) {
-
-      var input = inputs[i];
-
-      // Проверим валидность поля, используя встроенную в JavaScript функцию checkValidity()
-      if (input.checkValidity() == false) {
-
-        var inputCustomValidation = new CustomValidation(); // Создадим объект CustomValidation
-        inputCustomValidation.checkValidity(input); // Выявим ошибки
-        var customValidityMessage = inputCustomValidation.getInvalidities(); // Получим все сообщения об ошибках
-        input.setCustomValidity(customValidityMessage); // Установим специальное сообщение об ошибке
-
-      } // закончился if
-    } // закончился цикл
-  });
-
-  CustomValidation.prototype.getInvaliditiesForHTML = function() {
-    return this.invalidities.join('. <br>');
-  }
-
-// Добавляем обработчик клика на кнопку отправки формы
-  submit.addEventListener('click', function(e) {
-    // Пройдёмся по всем полям
-    for (var i = 0; i < inputs.length; i++) {
-
-      var input = inputs[i];
-
-      // Проверим валидность поля, используя встроенную в JavaScript функцию checkValidity()
-      if (input.checkValidity() == false) {
-
-        var inputCustomValidation = new CustomValidation(); // Создадим объект CustomValidation
-        inputCustomValidation.checkValidity(input); // Выявим ошибки
-        var customValidityMessage = inputCustomValidation.getInvalidities(); // Получим все сообщения об ошибках
-        input.setCustomValidity(customValidityMessage); // Установим специальное сообщение об ошибке
-
-        // Добавим ошибки в документ
-        var customValidityMessageForHTML = inputCustomValidation.getInvaliditiesForHTML();
-        input.insertAdjacentHTML('afterend', '<p class="error-message">' + customValidityMessageForHTML + '</p>')
-        stopSubmit = true;
-
-      } // закончился if
-    } // закончился цикл
-
-    if (stopSubmit) {
-      e.preventDefault();
-    }
-  });
+  let taskBlock6 = document.querySelector('.task6'),
+    writeBlock = taskBlock6.querySelector('.write')
+    window.addEventListener('keypress', (event)=>{
+      writeBlock.innerHTML = event.keyCode;
+    });
 })();
