@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>modul7 task3</title>
+</head>
+<body>
+<div>
+    Задание 3. Модифицируйте задание 1 добавив проверку на пустые input. Пустой input подсвечивается красным цветом, а
+    рядом выводится надпись «Заполните поле!».
+</div>
+<div class="first-container">
+    <input id="firstIn" type="text">
+    <button id="newInput">+</button>
+</div>
+<div class="container__inputs">
+
+</div>
+<button id="collapse">Собрать</button>
+<textarea style="display: block"></textarea>
+<script !src="">
+//Я старался ;)
+    let firstIn = document.querySelector('#firstIn'),
+        addNewInput = document.querySelector('#newInput'),
+        containerInput = document.querySelector('.container__inputs'),
+        collapse = document.querySelector('#collapse');
+    let numberMaxInput = 5;
+    let fillBlock = document.createElement('div');
+    fillBlock.innerHTML = 'Заполните поле';
+    fillBlock.style.display = 'inline-block';
+    addNewInput.addEventListener('click', () => {
+        if (containerInput.querySelectorAll('input').length + 1 <= numberMaxInput) {
+            let newDiv = document.createElement('div');
+            let newInput = document.createElement('input');
+            let deleteBtn = document.createElement('button');
+            deleteBtn.innerHTML = '-';
+            deleteBtn.onclick = () => {
+                containerInput.removeChild(newDiv);
+            };
+            newInput.value = firstIn.value;
+            firstIn.value = '';
+            let fillBlock2 = document.createElement('div');
+            fillBlock2.style.display = 'inline-block';
+            setTimeout(()=>{
+                newInput.parentNode.appendChild(fillBlock2);
+            }, 0);
+
+            newInput.addEventListener('keyup', () => {
+                if (newInput.value === '') {
+                    newInput.style.border = '1px solid red';
+                    fillBlock2.innerHTML = 'Заполните поле';
+                }
+                if(newInput.value !== ''){
+                    newInput.style.border = '1px solid green';
+                    fillBlock2.innerHTML = '';
+                }
+            });
+            newDiv.appendChild(newInput);
+            newDiv.appendChild(deleteBtn);
+            containerInput.appendChild(newDiv);
+        }
+    });
+    collapse.onclick = () => {
+        let allValue = containerInput.querySelectorAll('input');
+        let text = '';
+        allValue.forEach(item => {
+            text += ' ' + item.value;
+        });
+        document.querySelector('textarea').innerHTML = text;
+    };
+
+
+    let firstInput = document.querySelector('input');
+    firstInput.addEventListener('keyup', () => {
+        if (firstInput.value === '') {
+            firstInput.style.border = '1px solid red';
+            firstInput.parentNode.appendChild(fillBlock);
+        } else {
+            firstInput.style.border = '1px solid green';
+            if (firstInput.parentNode.querySelector('div')) {
+                firstInput.parentNode.removeChild(fillBlock)
+            }
+        }
+    })
+</script>
+</body>
+</html>

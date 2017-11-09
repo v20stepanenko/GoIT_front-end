@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>m7 task1</title>
+</head>
+<body>
+<div>Задание 1. Добавьте на страницу элемент input[type=»text»]. Справа от input расположите кнопку «+». При нажатии
+    кнопки «+» добавьте еще один элемент input ниже. Возле появившегося элемента создайте кнопку «-» при нажатии на
+    которую данный input будет удаляться. Внизу формы расположите кнопку «собрать», по нажатию которой текст из
+    элементов input будет выведен в расположенный на странице textarea.
+    Внимание: Количество input на странице не больше . Удалять можно все элементы input кроме последнего.
+</div>
+
+<input id="firstIn" type="text">
+<button id="newInput">+</button>
+<div class="container__inputs">
+
+</div>
+<button id="collapse">Собрать</button>
+<textarea style="display: block"></textarea>
+<script !src="">
+    let firstIn = document.querySelector('#firstIn'),
+        addNewInput = document.querySelector('#newInput'),
+        containerInput = document.querySelector('.container__inputs'),
+        collapse = document.querySelector('#collapse');
+    let numberMaxInput = 5;
+
+    addNewInput.addEventListener('click', () => {
+        if (containerInput.querySelectorAll('input').length + 1 <= numberMaxInput) {
+            let newDiv = document.createElement('div');
+            let newInput = document.createElement('input');
+            let deleteBtn = document.createElement('button');
+            deleteBtn.innerHTML = '-';
+            deleteBtn.onclick = () => {
+                containerInput.removeChild(newDiv);
+            };
+            newInput.value = firstIn.value;
+            firstIn.value = '';
+            newDiv.appendChild(newInput);
+            newDiv.appendChild(deleteBtn);
+            containerInput.appendChild(newDiv);
+        }
+    });
+    collapse.onclick = () => {
+        let allValue = containerInput.querySelectorAll('input');
+        let text = '';
+        allValue.forEach(item => {
+            text += ' ' + item.value;
+        });
+        document.querySelector('textarea').innerHTML = text;
+    }
+</script>
+</body>
+</html>
