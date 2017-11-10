@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>modul7 task4</title>
+    <style>
+        .task{
+            text-align: center;
+        }
+        .popap{
+            position: absolute;
+            padding: 150px 200px;
+            background: #4a2db4;
+            left: -90000px;
+        }
+        .task #first:active .task .popap{
+            left: 100px;
+        }
+    </style>
+</head>
+<body>
+<div>
+
+    Задание 4. Реализуйте по нажатию на кнопке всплывающее окно с двумя кнопками. Первая кнопка «Опция ., вторая кнопка
+    «Опция .. По нажатию на кнопку окно закрывается, а на странице выводится надпись «Вы выбрали опцию …» и номер
+    выбранной опции.
+</div>
+<div class="task">
+    <button id="first"> Кнопка попапа</button>
+    <div class="popap">
+        <button id="popap_firstBtn"> Опция один</button>
+        <button id="popap_secondBtn">Опция два</button>
+    </div>
+</div>
+</body>
+</html>
