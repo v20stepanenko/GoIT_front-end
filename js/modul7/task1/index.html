@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #collect {
+            display: block;
+        }
+        .empty-in{
+            outline: 2px solid #ff0000;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="panel">
+         <button id="addNewInput">+</button>
+    </div>
+        <form id="form-condition" action="#">
+             <label for="all">
+                 <input id="all" name="collect-type" type="radio" value="all" checked>
+                 Все
+             </label>
+             <label for="even">
+                 <input id="even" name="collect-type" type="radio" value="even">
+                 Четные
+             </label>
+             <label for="odd">
+                 <input id="odd" name="collect-type" type="radio" value="odd">
+                 Нечетные
+             </label>
+        </form>
+        <button id="collect">Собрать</button>
+        <textarea style="display: block" id="textarea" cols="30" rows="10"></textarea>
+         <script src='task1.js'></script>
+    </body>
+</html>
