@@ -59,13 +59,11 @@
 
         if (formCondition.all.checked) {
             condition.condition = condition.all;
-        }
-        else if (formCondition.even.checked) {
+        } else if (formCondition.even.checked) {
             condition.condition = condition.even;
         } else if (formCondition.odd.checked) {
             condition.condition = condition.odd;
         }
-
         return condition;
     };
 

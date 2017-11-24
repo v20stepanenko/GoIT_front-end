@@ -4,14 +4,13 @@ const inputSearch = $$('.search-film__input');
 
 formSearch.addEventListener('submit', (event) => {
     event.preventDefault();
-    if (inputSearch.value !== ''){
-        startApp(inputSearch.value);
-    }
+    if (inputSearch.value === '') return;
+    startRenderQuery({query: inputSearch.value});
+
 });
 
 
-const startApp  = function (query) {
-    fetchQuery(query)
-        .then();
+const startRenderQuery  = function (query) {
+    fetchQuery(query).then(data => console.log(data));
 };
 
