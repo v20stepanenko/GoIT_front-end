@@ -6,11 +6,13 @@ formSearch.addEventListener('submit', (event) => {
     event.preventDefault();
     if (inputSearch.value === '') return;
     startRenderQuery({query: inputSearch.value});
-
 });
 
 
 const startRenderQuery  = function (query) {
-    fetchQuery(query).then(data => console.log(data));
+    const resultPromise = gerPromiseResultQuery(query);
+    resultPromise.then(data => {
+        console.log(data);
+    })
 };
 
