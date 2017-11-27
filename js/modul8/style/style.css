@@ -1,0 +1,73 @@
+body{
+    background: #2c3d52;
+}
+
+ul{
+    padding: 0;
+    margin: 0;
+}
+
+.page-container{
+    padding: 10px 0;
+    margin: 0 auto;
+    display: flex;
+    width: 1140px;
+    justify-content: space-around;
+}
+
+aside{
+    flex-grow:12;
+    flex-shrink:3;
+    flex-basis: 30em;
+    margin-right: 10px;
+}
+
+.search-film{
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.search-film__input{
+    margin-bottom: 5px;
+}
+
+.search-film__btn-group{
+    display: inline-flex;
+    flex-wrap: nowrap;
+}
+
+
+.movie-list ul{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.movie-list ul li{
+    border: 2px solid black;
+    width: 220px;
+    height: 200px;
+}
+
+.movie-list__item{
+    overflow: hidden;
+    position: relative;
+}
+
+.movie-list__item .rating{
+    position: absolute;
+}
+
+.movie-list__item .poster{
+}
+
+.movie-list__item img{
+    display: block;
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+}
+
+
+
+
