@@ -10,6 +10,6 @@ const getUrl = ({query = '',}) => {
 const gerPromiseResultQuery = (query) => {
    return fetch(getUrl(query))
        .then(query => query.json())
-       .then(jsonQuery => jsonQuery.results);
+       .then(jsonQuery => jsonQuery.results)
 };
 

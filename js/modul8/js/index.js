@@ -9,10 +9,21 @@ formSearch.addEventListener('submit', (event) => {
 });
 
 
-const startRenderQuery  = function (query) {
-    const resultPromise = gerPromiseResultQuery(query);
-    resultPromise.then(data => {
-        console.log(data);
-    })
-};
+const startRenderQuery = function (query) {
+    const getArrFilmsPromise = gerPromiseResultQuery(query).then(result => {
+        console.log(result);
+        const arrFilms = result.map(item =>{
+            return new Film(item);
+        });
+        arrFilms.sort((filmA, filmB)=>{
+            if(filmB.getPopularity() > filmA.getPopularity()){
+                return 1;
+            }else{
+                return -1;
+            }
+        });
 
+        return arrFilms;
+    });
+    const renderFilmsPromise = getArrFilmsPromise.then();
+};
