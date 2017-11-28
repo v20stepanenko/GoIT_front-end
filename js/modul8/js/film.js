@@ -30,7 +30,7 @@ class Film{
         }
         return overview;
     }
-    getUrlPost(weidth){
+    getUrlPoster(weidth){
         return `${Film.enterpointImg}${weidth}${this._poster_path}`;
     }
 }

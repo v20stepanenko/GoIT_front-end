@@ -46,7 +46,7 @@ aside{
 .movie-list ul li{
     border: 2px solid black;
     width: 220px;
-    height: 200px;
+    height: 250px;
 }
 
 .movie-list__item{
@@ -67,6 +67,16 @@ aside{
     height: 120px;
     object-fit: cover;
 }
+
+.movie-list__item .film-name{
+    font-size: 15px;
+}
+
+.movie-list__item .overview{
+    font-size: 15px;
+}
+
+
 
 
 

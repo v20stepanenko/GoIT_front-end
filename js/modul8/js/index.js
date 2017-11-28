@@ -8,6 +8,19 @@ formSearch.addEventListener('submit', (event) => {
     startRenderQuery({query: inputSearch.value});
 });
 
+const templateMovie = '<li class="movie-list__item">\
+                <div class="rating"><%=vote_average%></div>\
+                <div class="poster">\
+                    <img src="<%=urlPoster%>" alt="" class="poster">\
+                </div>\
+                <h2 class="film-name"><%=filmName%></h2>\
+                <div class="overview"> </div>\
+            </li>';
+let test = document.querySelector('#test');
+console.log(_.template(templateMovie)({
+    vote_average: 5, urlPoster: 'https://image.tmdb.org/t/p/w300/9E2y5Q7WlCVNEhP5GiVTjhEhx1o.jpg'
+    filmName: 'Test'
+}));;
 
 const startRenderQuery = function (query) {
     const getArrFilmsPromise = gerPromiseResultQuery(query).then(result => {
