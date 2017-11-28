@@ -3,10 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js"></script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js"></script>-->
 </head>
 <body>
-<div id="test"></div>
-<script src="test.js"></script>
+<div id="test">
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+</div>
+<!--<script src="test.js"></script>-->
+<script !src="">
+    class Test{
+        constructor(text){
+            this.text = text;
+        }
+
+        static get testText() {
+           return 'testText';
+        }
+
+    }
+
+    const testTest = new Test('wow');
+    console.log(Test.testText);
+</script>
 </body>
 </html>

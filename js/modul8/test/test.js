@@ -5,3 +5,8 @@ var tmpl = '<ul>\
 </ul>';
 var test = document.querySelector('#test');
  test.innerHTML = _.template(tmpl)({count: 5});
+
+
+
+const test2 = document.querySelector('#test');
+renderTemplate(test2, childDOM);

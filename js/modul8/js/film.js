@@ -7,8 +7,8 @@ class Film{
         this._poster_path = poster_path;
     }
 
-    static enterpointImg(){
-        return 'https://image.tmdb.org/t/p/';
+    static get enterpointImg(){
+        return 'https://image.tmdb.org/t/p';
     }
 
     getTitle(){
@@ -26,11 +26,11 @@ class Film{
     getOvetview(maxLength){
         let overview = this._overview;
         if(overview.length > maxLength){
-            overview = overview.slice(0, 97)+'...';
+            overview = overview.slice(0, maxLength-3)+'...';
         }
         return overview;
     }
     getUrlPoster(weidth){
-        return `${Film.enterpointImg}${weidth}${this._poster_path}`;
+        return `${Film.enterpointImg}/w${weidth}${this._poster_path}`;
     }
 }

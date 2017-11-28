@@ -37,13 +37,13 @@ aside{
 }
 
 
-.movie-list ul{
+.movie-section ul{
     list-style: none;
     display: flex;
     flex-wrap: wrap;
 }
 
-.movie-list ul li{
+.movie-section ul li{
     border: 2px solid black;
     width: 220px;
     height: 250px;
