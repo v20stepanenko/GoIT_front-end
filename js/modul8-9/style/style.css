@@ -12,6 +12,7 @@ ul{
     position: absolute;
     right: 0;
     top: 0;
+    background: #8d0495;
 }
 #light-theme{
     border: 2px solid black;
