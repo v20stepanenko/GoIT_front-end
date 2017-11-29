@@ -5,21 +5,11 @@ const tagChildMovList = 'ul';  //
 const movSection = $$('.movie-section');
 const btnGroup = $$('.search-film__btn-group');
 
-const templateCardMovie = '<li class="movie-list__item">\
-                <div class="rating"><%=vote_average%></div>\
-                <div class="poster">\
-                    <img src="<%=urlPoster%>" alt="" class="poster">\
-                </div>\
-                <h2 class="film-name"><%=filmName%></h2>\
-                <div class="overview"><%=description%> </div>\
-                <div clas="date"><%=releaseDate%></div>\
-            </li>';
-
 formSearch.addEventListener('submit', (event) => {
     event.preventDefault();
     if (inputSearch.value === '') return;
     const url = getUrlByInput(inputSearch.value);
-    renderGroupFilms(url);
+    renderFetch(url);
     inputSearch.value = '';                               //clear input
 });
 
@@ -40,19 +30,9 @@ btnGroup.addEventListener('click', (event) => {
         }
     }
     const url  = categoriesFilm.getUrl(categories);
-    renderGroupFilms(url);
+    renderFetch(url);
 });
 
-const getTemplateMovListCard = (listItem) => {
-    const templateObj = {
-        vote_average: listItem.getVoteAverage(),
-        urlPoster: listItem.getUrlPoster(300),
-        filmName: listItem.getTitle(),
-        description: listItem.getOvetview(100),
-        releaseDate: listItem.getReleaseDate()
-    };
-    return _.template(templateCardMovie)(templateObj);
-};
 const renderTemplate = (parent, childrenDOM) => {
     const removeElem = parent.querySelector(childrenDOM.nodeName);
     if (removeElem) {
@@ -71,12 +51,6 @@ const sortedFilmByPopulariuty = (arrFilms) => {
     });
 };
 
-const createDOMList = (template, tagReplaceChild) => new DOMParser()
-    .parseFromString(template, 'text/html')
-    .firstChild
-    .querySelector(tagReplaceChild);
-
-
 const renderCardsMov = (arrFilms) => {
     let templateMovList = '<' + tagChildMovList + '>';  //open tag template
 
@@ -90,7 +64,7 @@ const renderCardsMov = (arrFilms) => {
     renderTemplate(movSection, movListDOM);
 };
 
-const renderGroupFilms = (url) => {
+const renderFetch = (url) => {
     const latestFilms = url == categoriesFilm.getUrl(categoriesFilm.latest);
 
     let getResultPromise = gerQueryPromise(url)
