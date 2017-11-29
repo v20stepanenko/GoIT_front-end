@@ -1,9 +1,9 @@
 const $$ = (selector) => document.querySelector(selector);
 const formSearch = $$('.search-film');
 const inputSearch = $$('.search-film__input');
-const tagChildMovList = 'ul';  //
 const movSection = $$('.movie-section');
-const btnGroup = $$('.search-film__btn-group');
+const btnGroupMovies = $$('.search-film__btn-group');
+const tagChildMovList = 'ul';  //
 
 formSearch.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -13,7 +13,7 @@ formSearch.addEventListener('submit', (event) => {
     inputSearch.value = '';                               //clear input
 });
 
-btnGroup.addEventListener('click', (event) => {
+btnGroupMovies.addEventListener('click', (event) => {
     let categories = '';
     switch (event.target.value) {
         case('popular'): {

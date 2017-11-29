@@ -67,7 +67,7 @@ aside{
 .movie-section ul li{
     border: 2px solid black;
     width: 220px;
-    height: 250px;
+    height: 290px;
 }
 
 .movie-list__item{
@@ -79,7 +79,9 @@ aside{
     position: absolute;
 }
 
-.movie-list__item .poster{
+.movie-list__item{
+
+    background: #81654e;
 }
 
 .movie-list__item img{
@@ -94,9 +96,14 @@ aside{
 }
 
 .movie-list__item .overview{
+    margin-bottom: 10px;
     font-size: 15px;
 }
 
+.movie-list__item .rating{
+    background: #ff4208;
+    padding: 4px;
+}
 
 
 
