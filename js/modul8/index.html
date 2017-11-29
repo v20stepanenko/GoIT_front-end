@@ -5,10 +5,14 @@
     <title>Title</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css">
     <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" id="theme" href="style/dark-theme.css">
     <script src="js/lodash.js"></script>
 </head>
 <body>
-<div id="test"></div>
+<div class="state-theme">
+    <div data-theme = "light" id="light-theme"></div>
+    <div data-theme = "dark" id="dark-theme"></div>
+</div>
     <div class="page-container">
         <aside>
             <form action="#" name="search-film" class="search-film">
@@ -25,6 +29,7 @@
     </div>
 <script src="js/interactionAPI.js"></script>
 <script src="js/film.js"></script>
+<script src="js/theme.js"></script>
 <script src="js/index.js"></script>
 </body>
 </html>

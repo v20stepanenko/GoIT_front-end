@@ -19,28 +19,31 @@ formSearch.addEventListener('submit', (event) => {
     event.preventDefault();
     if (inputSearch.value === '') return;
     const url = getUrlByInput(inputSearch.value);
-    startRenderQuery(url);
+    renderGroupFilms(url);
     inputSearch.value = '';                               //clear input
 });
 
 btnGroup.addEventListener('click', (event) => {
+    let categories = '';
     switch (event.target.value) {
         case('popular'): {
-            renderGroupFilms(categoriesFilm.popular);
+            categories = categoriesFilm.popular;
             break;
         }
         case('top_rated'): {
-            renderGroupFilms(categoriesFilm.topRated);
+            categories = categoriesFilm.topRated;
             break;
         }
         case('latest'): {
-            renderGroupFilms(categoriesFilm.latest);
+            categories = categoriesFilm.latest;
             break;
         }
     }
+    const url  = categoriesFilm.getUrl(categories);
+    renderGroupFilms(url);
 });
 
-const createTemplateMovListItem = (listItem) => {
+const getTemplateMovListCard = (listItem) => {
     const templateObj = {
         vote_average: listItem.getVoteAverage(),
         urlPoster: listItem.getUrlPoster(300),
@@ -78,7 +81,7 @@ const renderCardsMov = (arrFilms) => {
     let templateMovList = '<' + tagChildMovList + '>';  //open tag template
 
     arrFilms.forEach(film => {
-        templateMovList += createTemplateMovListItem(film);
+        templateMovList += getTemplateMovListCard(film);
     });
 
     templateMovList += '</' + tagChildMovList + '>'; //close tag template
@@ -87,41 +90,16 @@ const renderCardsMov = (arrFilms) => {
     renderTemplate(movSection, movListDOM);
 };
 
-
-const startRenderQuery = query => {
-
-    const getResultPromise = gerQueryPromise(query)
-        .then(jsonQuery => {
-            return jsonQuery.results;
-        }).catch(err => console.error(err));
-
-    const getArrFilmsPromise = getResultPromise.then(result => {
-
-        console.log(result);
-        const arrFilms = result.map(item => {
-            return new Film(item);
-        });
-        console.log(arrFilms);
-        sortedFilmByPopulariuty(arrFilms);
-        return arrFilms;
-    });
-    const renderFilmsPromise = getArrFilmsPromise.then(arrFilms => {
-        renderCardsMov(arrFilms);
-    });
-};
-
-const renderGroupFilms = (categoryFilm) => {
-    const latestFilms = categoryFilm == categoriesFilm.latest;
-
-    let url = categoriesFilm.getUrl(categoryFilm);
+const renderGroupFilms = (url) => {
+    const latestFilms = url == categoriesFilm.getUrl(categoriesFilm.latest);
 
     let getResultPromise = gerQueryPromise(url)
         .then(data => {
-            if(latestFilms) return data;
+            if (latestFilms) return data;
             return data.results;
         }).catch(err => console.error(err));
 
-    if (latestFilms){
+    if (latestFilms) {
         getResultPromise = getResultPromise.then(data => {
             const newArr = [data];
             return newArr
@@ -130,12 +108,14 @@ const renderGroupFilms = (categoryFilm) => {
 
     const getArrFilmsPromise = getResultPromise.then(result => {
         const arrFilms = result.map(item => {
-            const newItem = {
+            const constructObjFilm = {
                 ...item,
-                title: item.name,
-                release_date: item.first_air_date
             };
-            return new Film(newItem);
+            if (item.name && item.first_air_date) {
+                constructObjFilm.title = item.name;
+                constructObjFilm.release_date = item.first_air_date
+            }
+            return new Film(constructObjFilm);
         });
         sortedFilmByPopulariuty(arrFilms);
         return arrFilms;

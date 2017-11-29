@@ -7,6 +7,27 @@ ul{
     margin: 0;
 }
 
+.state-theme{
+    display: inline-flex;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+#light-theme{
+    border: 2px solid black;
+    margin: 5px;
+    width: 30px;
+    height: 30px;
+    background: #4192ff;
+}
+#dark-theme{
+    border: 2px solid black;
+    margin: 5px;
+    width: 30px;
+    height: 30px;
+    background: #101c39;
+}
+
 .page-container{
     padding: 10px 0;
     margin: 0 auto;
