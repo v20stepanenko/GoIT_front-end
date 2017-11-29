@@ -1,11 +1,11 @@
 class Film{
-    constructor({title, popularity, vote_average, poster_path, overview, releaseData}){
+    constructor({title, popularity, vote_average, poster_path, overview, release_date}){
         this._title = title;
         this._overview = overview;
         this._popularity = popularity;
         this._voteAverage = vote_average;
         this._posterPath = poster_path;
-        this._releaseDate = releaseData
+        this._releaseDate = release_date
     }
 
     static get enterpointImg(){
@@ -32,9 +32,15 @@ class Film{
         return overview;
     }
     getUrlPoster(weidth){
-        return `${Film.enterpointImg}/w${weidth}${this._posterPath}`;
+        const posterPath = this._posterPath;
+        if(posterPath){
+            return `${Film.enterpointImg}/w${weidth}${posterPath}`;
+        }else{
+            return `img/plug.jpg`;
+        }
+
     }
-    getReleaseData(){
+    getReleaseDate(){
         return this._releaseDate;
     }
 }

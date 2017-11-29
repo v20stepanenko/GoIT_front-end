@@ -16,14 +16,13 @@ const categoriesFilm = {
 };
 
 
-const gerResultQueryPromise = (url) => fetch(url)
+const gerQueryPromise = (url) => fetch(url)
     .then(response => {
         if (response.ok) {
             return response.json()
         }
         throw new Error('error while fetching, ' + response.statusText);
     })
-    .then(jsonQuery => jsonQuery.results)
     .catch(err => console.log(err));
 
 
