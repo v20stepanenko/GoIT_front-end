@@ -1,10 +1,11 @@
 class Film{
-    constructor({title, popularity, vote_average, poster_path, overview}){
+    constructor({title, popularity, vote_average, poster_path, overview, releaseData}){
         this._title = title;
         this._overview = overview;
         this._popularity = popularity;
-        this._vote_average = vote_average;
-        this._poster_path = poster_path;
+        this._voteAverage = vote_average;
+        this._posterPath = poster_path;
+        this._releaseDate = releaseData
     }
 
     static get enterpointImg(){
@@ -20,7 +21,7 @@ class Film{
     }
 
     getVoteAverage(){
-        return this._vote_average;
+        return this._voteAverage;
     }
 
     getOvetview(maxLength){
@@ -31,6 +32,9 @@ class Film{
         return overview;
     }
     getUrlPoster(weidth){
-        return `${Film.enterpointImg}/w${weidth}${this._poster_path}`;
+        return `${Film.enterpointImg}/w${weidth}${this._posterPath}`;
+    }
+    getReleaseData(){
+        return this._releaseDate;
     }
 }
