@@ -12,7 +12,7 @@ const templateCardMovie = '<li class="movie-list__item">\
                 </div>\
                 <h2 class="film-name"><%=filmName%></h2>\
                 <div class="overview"><%=description%> </div>\
-                <div clas="date"><%=relisData%></div>\
+                <div clas="date"><%=releaseDate%></div>\
             </li>';
 
 formSearch.addEventListener('submit', (event) => {
@@ -34,7 +34,7 @@ const createTemplateMovListItem = (listItem) =>{
         urlPoster: listItem.getUrlPoster(300),
         filmName: listItem.getTitle(),
         description: listItem.getOvetview(100),
-        releaseDate: listItem.getReleaseData()
+        releaseDate: 'non'
         };
     return _.template(templateCardMovie)(templateObj);
 };
