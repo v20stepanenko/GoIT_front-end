@@ -32,7 +32,7 @@ gulp.task('bundleCSS', function () {
 //js
 
 gulp.task('bundleJs', function () {
-    return gulp.src([path.js, '!js/modul8/js/lodash.js'])
+    return gulp.src([path.js, '!js/modul8-9/js/lodash.js'])
         .pipe(browserSync.reload({stream: true}));
 })
 
