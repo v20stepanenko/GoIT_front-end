@@ -62,8 +62,8 @@ const renderCardsMov = (arrFilms) => {
 };
 
 const renderFetch = (url) => {
-    console.log('fetch');
-    const latestFilms = url == categoriesFilm.getUrl(categoriesFilm.latest);
+
+    const latestFilms = url === categoriesFilm.getUrl(categoriesFilm.latest);
 
     let getResultPromise = gerQueryPromise(url)
         .then(data => {
@@ -93,7 +93,7 @@ const renderFetch = (url) => {
         return arrFilms;
     });
 
-    const renderFilmsPromise = getArrFilmsPromise.then(arrFilms => {
+    getArrFilmsPromise.then(arrFilms => {
         renderCardsMov(arrFilms);
     });
 };
