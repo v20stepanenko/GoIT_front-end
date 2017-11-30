@@ -13,23 +13,24 @@ formSearch.addEventListener('submit', (event) => {
     inputSearch.value = '';                               //clear input
 });
 
-btnGroupMovies.addEventListener('click', (event) => {
-    let categories = '';
-    switch (event.target.value) {
+const getCatigoriesByTarget = (target) => {
+    switch (target.value) {
         case('popular'): {
-            categories = categoriesFilm.popular;
-            break;
+            return categoriesFilm.popular;
         }
         case('top_rated'): {
-            categories = categoriesFilm.topRated;
-            break;
+            return categoriesFilm.topRated;
         }
         case('latest'): {
-            categories = categoriesFilm.latest;
-            break;
+            return categoriesFilm.latest;
         }
     }
-    const url  = categoriesFilm.getUrl(categories);
+
+};
+
+btnGroupMovies.addEventListener('click', (event) => {
+    let categories = getCatigoriesByTarget(event.target);
+    const url = categoriesFilm.getUrl(categories);
     renderFetch(url);
 });
 
@@ -42,13 +43,9 @@ const renderTemplate = (parent, childrenDOM) => {
 };
 
 const sortedFilmByPopulariuty = (arrFilms) => {
-    arrFilms.sort((filmA, filmB) => {                             //Sorting movies for rendering by popularity
-        if (filmB.getPopularity() > filmA.getPopularity()) {
-            return 1;
-        } else {
-            return -1;
-        }
-    });
+    arrFilms.sort((filmA, filmB) =>                              //Sorting movies for rendering by popularity
+        filmB.getPopularity() > filmA.getPopularity() ? 1 : -1
+    );
 };
 
 const renderCardsMov = (arrFilms) => {
@@ -65,6 +62,7 @@ const renderCardsMov = (arrFilms) => {
 };
 
 const renderFetch = (url) => {
+    console.log('fetch');
     const latestFilms = url == categoriesFilm.getUrl(categoriesFilm.latest);
 
     let getResultPromise = gerQueryPromise(url)
