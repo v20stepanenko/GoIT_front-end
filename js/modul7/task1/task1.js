@@ -99,7 +99,7 @@
             }
         });
 
-        const regExp = new RegExp(separator + '$', 'm'); // regExp for delete last separator
+        const regExp = new RegExp(separator + '$', 'm'); // regExp for delete last separatorr
         text = text.replace(regExp, '');
         textArea.innerHTML = text;
     });
