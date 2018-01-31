@@ -12,11 +12,13 @@
 
     const setEmptyInput = new Set();
 
+
     inputAddDomNode.addEventListener('click', () => {
         const newBlock = new DOMParser().parseFromString(templateInputGroup, 'text/html').firstChild;
         setEmptyInput.add(newBlock.querySelector('input'));
-        panel.insertBefore(newBlock, panel.children[1]); //как сделать что бы не привязываться к индексу?
+        panel.insertBefore(newBlock, panel.children[1]);
     });
+
 
     panel.addEventListener('click', (event) => {
         const eventTarget = event.target;
@@ -55,6 +57,7 @@
             all: 'all',
             even: 'even',
             odd: 'odd'
+            
         };
 
         if (formCondition.all.checked) {
